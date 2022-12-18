@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace STAFEGROUPAB\FilamentStickyPanel\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentStickyPanelCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-sticky-panel';
 
     public $description = 'My command';
 

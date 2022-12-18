@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace STAFEGROUPAB\FilamentStickyPanel;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use STAFEGROUPAB\FilamentStickyPanel\Commands\FilamentStickyPanelCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilamentStickyPanelServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('filament-sticky-panel')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_filament-sticky-panel_table')
+            ->hasCommand(FilamentStickyPanelCommand::class);
     }
 }
