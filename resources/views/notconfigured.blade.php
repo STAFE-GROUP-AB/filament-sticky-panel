@@ -9,7 +9,7 @@
                 In the config file filament-sticky-panel.php you can tell which Livewire component that should be rendered here!
             </p>
             <p class="mt-4 text-lg leading-6 text-indigo-200">
-                If you want to customize more just publish the views!
+                If you want to customize just fork the whole thang!
             </p>
         </div>
     </div>

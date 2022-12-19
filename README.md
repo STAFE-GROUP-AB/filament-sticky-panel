@@ -1,19 +1,15 @@
-# This plugin gives you a right hand side panel in Filament to use for any Livewire component.
+# Filament Sticky Panel for Filament Admin
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stafe-group-ab/filament-sticky-panel.svg?style=flat-square)](https://packagist.org/packages/stafe-group-ab/filament-sticky-panel)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stafe-group-ab/filament-sticky-panel/run-tests?label=tests)](https://github.com/stafe-group-ab/filament-sticky-panel/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/stafe-group-ab/filament-sticky-panel/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/stafe-group-ab/filament-sticky-panel/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/stafe-group-ab/filament-sticky-panel.svg?style=flat-square)](https://packagist.org/packages/stafe-group-ab/filament-sticky-panel)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+![Screen shot of Filament Sticky Panel on Dashboard](./images/sticky-panel-dashboard.png)
 
-## Support us
+![Screen shot of Filament Sticky Panel on Edit Pages](./images/sticky-panel-edit.png)
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/filament-sticky-panel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/filament-sticky-panel)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This Filament Plugin will give you a right sidepanel in your Filament Admin in which you can render
+any Livewire component that you create. You can configure in the config file which component to render
+on which page in your Filament Admin.
 
 ## Installation
 
@@ -23,23 +19,26 @@ You can install the package via composer:
 composer require stafe-group-ab/filament-sticky-panel
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-sticky-panel-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="filament-sticky-panel-config"
 ```
 
-This is the contents of the published config file:
+This is the contents of the published config file. Use the basenames or page_urls here.
 
 ```php
 return [
+    'pages' => [
+        'admin' => [
+            'page_url' => 'admin',
+            'component' => '', //'livewire.demo-component',
+        ],
+        'edit' => [
+            'page_url' => 'edit',
+            'component' => '', //'livewire.edit-helper-component',
+        ],
+    ],
 ];
 ```
 
@@ -50,11 +49,8 @@ php artisan vendor:publish --tag="filament-sticky-panel-views"
 ```
 
 ## Usage
-
-```php
-$filamentStickyPanel = new STAFEGROUPAB\FilamentStickyPanel();
-echo $filamentStickyPanel->echoPhrase('Hello, STAFEGROUPAB!');
-```
+Just install the plugin and add some pages in the config file. It will split up your page in two parts.
+If you want to edit the grid settings, just public the views and do so.
 
 ## Testing
 
@@ -76,7 +72,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Andreas Kviby](https://github.com/STAFE-GROUP-AB)
+- [Andreas Kviby, Stafe Group](https://github.com/STAFE-GROUP-AB)
 - [All Contributors](../../contributors)
 
 ## License

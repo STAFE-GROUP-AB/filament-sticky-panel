@@ -11,20 +11,21 @@ use STAFEGROUPAB\FilamentStickyPanel\Facades\FilamentStickyPanel;
 class StickyPanelStart extends Component
 {
     public $currentUrl;
-    public $exclude_page = null;
+    public $include_page = null;
 
     public function mount(): void
     {
         $this->currentUrl = ENV('APP_URL') . $_SERVER['REQUEST_URI'];
-        if (is_array(config('filament-sticky-panel.exclude_pages'))) {
-            $exclusions = config('filament-sticky-panel.exclude_pages');
-            foreach ($exclusions as $exclusion) {
-                if (basename($this->currentUrl) == $exclusion){
-                    $this->exclude_page = true;
+        if (is_array(config('filament-sticky-panel.pages'))) {
+            $pages = config('filament-sticky-panel.pages');
+            foreach ($pages as $page) {
+                if (basename($this->currentUrl) == $page['page_url']){
+                    $this->include_page = true;
                     break;
                 }
             }
         }
+
     }
     public function render(): View
     {
