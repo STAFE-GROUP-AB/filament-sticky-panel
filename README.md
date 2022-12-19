@@ -32,11 +32,11 @@ return [
     'pages' => [
         'admin' => [
             'page_url' => 'admin',
-            'component' => '', //'livewire.demo-component',
+            'component' => '', //'demo-component',
         ],
         'edit' => [
             'page_url' => 'edit',
-            'component' => '', //'livewire.edit-helper-component',
+            'component' => '', //'edit-helper-component',
         ],
     ],
 ];
