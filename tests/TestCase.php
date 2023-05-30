@@ -8,12 +8,14 @@ use STAFEGROUPAB\FilamentStickyPanel\FilamentStickyPanelServiceProvider;
 
 class TestCase extends Orchestra
 {
+    protected $enablesPackageDiscoveries = true;
+
     protected function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'STAFEGROUPAB\\FilamentStickyPanel\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'STAFEGROUPAB\\FilamentStickyPanel\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
